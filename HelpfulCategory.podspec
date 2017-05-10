@@ -14,6 +14,8 @@ Pod::Spec.new do |s|
 
   s.author       = { "Chenzuliang" => "chenzuliang@geek-zoo.com" }
 
+  s.platform     = :ios, "8.0"
+
   s.frameworks = 'UIKit','Foundation', 'CoreGraphics', 'sys'
 
   s.source       = { :git => "https://github.com/Hello-Bye/HelpfulCategory.git", :tag => s.version }
