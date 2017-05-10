@@ -10,7 +10,7 @@
 
 @implementation SDiPhoneVersion
 
-+(NSDictionary*)deviceNamesByCode {
++ (NSDictionary*)deviceNamesByCode {
     
     static NSDictionary* deviceNamesByCode = nil;
     static dispatch_once_t onceToken;
@@ -51,15 +51,13 @@
                               @"iPad4,2" :[NSNumber numberWithInteger:iPadAir],
                               @"iPad4,4" :[NSNumber numberWithInteger:iPadMiniRetina],
                               @"iPad4,5" :[NSNumber numberWithInteger:iPadMiniRetina]
-                              
-                              
                               };
     });
     
     return deviceNamesByCode;
 }
 
-+(DeviceVersion)deviceVersion {
++ (DeviceVersion)deviceVersion {
     
     struct utsname systemInfo;
     uname(&systemInfo);
@@ -71,7 +69,7 @@
     
 }
 
-+(DeviceSize)deviceSize {
++ (DeviceSize)deviceSize {
     
     CGFloat screenHeight;
 
@@ -79,15 +77,15 @@
         
         UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
         
-        if (orientation ==  UIDeviceOrientationPortrait)
+        if (orientation ==  UIDeviceOrientationPortrait) {
             screenHeight = [[UIScreen mainScreen] bounds].size.height;
-        
-        else if((orientation == UIDeviceOrientationLandscapeRight) || (orientation == UIInterfaceOrientationLandscapeLeft))
+        } else {
             screenHeight = [[UIScreen mainScreen] bounds].size.width;
+        }
         
-    }else
+    } else {
         screenHeight = [[UIScreen mainScreen] bounds].size.height;
-    
+    }
     
     if (screenHeight == 480)
         return iPhone35inch;
@@ -101,7 +99,7 @@
         return UnknownSize;
 }
 
-+(NSString*)deviceName {
++ (NSString*)deviceName {
     
     struct utsname systemInfo;
     uname(&systemInfo);

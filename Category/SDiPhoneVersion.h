@@ -11,8 +11,6 @@
 #import <UIKit/UIKit.h>
 #import <sys/utsname.h>
 
-@interface SDiPhoneVersion : NSObject
-
 #define iOSVersionEqualTo(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define iOSVersionGreaterThan(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
 #define iOSVersionGreaterThanOrEqualTo(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
@@ -46,8 +44,10 @@ typedef NS_ENUM(NSInteger, DeviceSize){
     iPhone55inch = 4
 };
 
-+(DeviceVersion)deviceVersion;
-+(DeviceSize)deviceSize;
-+(NSString*)deviceName;
+@interface SDiPhoneVersion : NSObject
+
++ (DeviceVersion)deviceVersion;
++ (DeviceSize)deviceSize;
++ (NSString*)deviceName;
 
 @end
