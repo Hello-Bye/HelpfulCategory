@@ -71,7 +71,7 @@
 
 + (DeviceSize)deviceSize {
     
-    CGFloat screenHeight = 0.0;
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
 
     if (iOSVersionGreaterThan(@"8")) {
         UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
@@ -85,13 +85,13 @@
         screenHeight = [[UIScreen mainScreen] bounds].size.height;
     }
     
-    if (screenHeight == 480) {
+    if (screenHeight == 480.0) {
         return iPhone35inch;
-    } else if (screenHeight == 568) {
+    } else if (screenHeight == 568.0) {
         return iPhone4inch;
-    } else if (screenHeight == 667) {
+    } else if (screenHeight == 667.0) {
         return  iPhone47inch;
-    } else if (screenHeight == 736) {
+    } else if (screenHeight == 736.0) {
         return iPhone55inch;
     } else {
         return UnknownSize;

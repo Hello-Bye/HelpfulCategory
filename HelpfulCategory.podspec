@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HelpfulCategory"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A helpful category."
 
   s.description  = "A description of HelpfulCategory."
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.author       = { "Chenzuliang" => "chenzuliang@geek-zoo.com" }
 
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "7.0"
 
   s.frameworks = 'UIKit','Foundation', 'CoreGraphics', 'sys'
 
@@ -22,6 +22,4 @@ Pod::Spec.new do |s|
 
   s.source_files  = "Category/*.{h,m}"
   # s.exclude_files = "HelpfulCategory/**/*.{h,m}"
-
-
 end
