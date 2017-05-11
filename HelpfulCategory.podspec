@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HelpfulCategory"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A helpful category."
 
   s.description  = "A description of HelpfulCategory."
@@ -18,8 +18,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.ios.deployment_target = "7.0"
 
-  s.frameworks = "UIKit", "Foundation", "CoreGraphics"
-  s.library = "sys"
+  # s.frameworks = "UIKit", "Foundation", "CoreGraphics"
+  # s.library = "sys"
 
   s.source       = { :git => "https://github.com/Hello-Bye/HelpfulCategory.git", :tag => s.version }
 
