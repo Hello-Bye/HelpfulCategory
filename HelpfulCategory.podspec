@@ -13,10 +13,13 @@ Pod::Spec.new do |s|
   # s.license    = { :type => "MIT", :file => "FILE_LICENSE" }
 
   s.author       = { "Chenzuliang" => "chenzuliang@geek-zoo.com" }
+  s.requires_arc = true
 
   s.platform     = :ios, "7.0"
+  s.ios.deployment_target = "7.0"
 
-  s.frameworks = 'UIKit','Foundation', 'CoreGraphics', 'sys'
+  s.frameworks = "UIKit", "Foundation", "CoreGraphics"
+  s.library = "sys"
 
   s.source       = { :git => "https://github.com/Hello-Bye/HelpfulCategory.git", :tag => s.version }
 
