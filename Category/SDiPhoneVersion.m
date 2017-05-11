@@ -12,7 +12,7 @@
 
 + (NSDictionary*)deviceNamesByCode {
     
-    static NSDictionary* deviceNamesByCode = nil;
+    static NSDictionary *deviceNamesByCode;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         deviceNamesByCode = @{
@@ -71,10 +71,9 @@
 
 + (DeviceSize)deviceSize {
     
-    CGFloat screenHeight;
+    CGFloat screenHeight = 0.0;
 
     if (iOSVersionGreaterThan(@"8")) {
-        
         UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
         
         if (orientation ==  UIDeviceOrientationPortrait) {
@@ -82,21 +81,21 @@
         } else {
             screenHeight = [[UIScreen mainScreen] bounds].size.width;
         }
-        
     } else {
         screenHeight = [[UIScreen mainScreen] bounds].size.height;
     }
     
-    if (screenHeight == 480)
+    if (screenHeight == 480) {
         return iPhone35inch;
-    else if(screenHeight == 568)
+    } else if (screenHeight == 568) {
         return iPhone4inch;
-    else if(screenHeight == 667)
+    } else if (screenHeight == 667) {
         return  iPhone47inch;
-    else if(screenHeight == 736)
+    } else if (screenHeight == 736) {
         return iPhone55inch;
-    else
+    } else {
         return UnknownSize;
+    }
 }
 
 + (NSString*)deviceName {
