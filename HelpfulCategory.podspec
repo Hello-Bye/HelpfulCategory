@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HelpfulCategory"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "A helpful category."
 
   s.description  = "A description of HelpfulCategory."
